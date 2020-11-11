@@ -1,0 +1,33 @@
+node {
+  stage ('Checkout') 
+  {
+    // Get the code from the Git repository
+    // THREE STAGES chg
+    checkout scm
+  }
+
+  stage('Git to ISPW Synchronization v2')
+  { 
+	gitToIspwIntegration app: 'AXJ1', 
+    	branchMapping: '''AXJ1Branch1 => DEV1,per-branch''', 
+    	connectionId: '54c6311f-f7bc-415e-866c-b06c8ef378f2', 
+    	credentialsId: 'CWCC_TSO_LOGIN',
+ 	gitCredentialsId: '',
+    	gitRepoUrl: 'https://github.com/alanjohnscompuware/NEWAXJ1REPO.git',
+    	stream: 'FTSDEMO'
+  }
+
+
+  stage('Build ISPW assignment')
+  {
+    ispwOperation connectionId: '62d95dd5-bb40-4388-b2de-2c9c92bfee87', 
+    credentialsId: 'HUK0320CES', 
+    ispwAction: 'BuildAssignment', 
+//   ispwRequestBody: '''assignmentId=AXJ1000019
+//level=DEV1
+//'''
+    ispwRequestBody:          '''buildautomatically = true'''
+  }
+}
+  
+ 
