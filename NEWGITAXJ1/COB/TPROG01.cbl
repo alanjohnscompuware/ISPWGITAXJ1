@@ -35,7 +35,7 @@
 003500*  FILES USED:
 003600*   INPUT   JUST SOME DUMMY DATA TO READ IN
 003700*   OUTPUT  A COPY OF THE DUMMY DATA WRITTEN OUT
-      *  new code change to test ispw integration
+      *  new code change to test ispw integration 2
 003800*****************************************************
 003900     SELECT INFILE  ASSIGN UT-S-INPUT
 004000       ORGANIZATION IS SEQUENTIAL
