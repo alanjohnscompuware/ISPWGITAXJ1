@@ -1,7 +1,7 @@
 !!com.compuware.ispw.wzzms.models.IspwRoot
 ispwApplication:
   application: AXJ1
-  host: cwcc.compuware.com
+  host: CWCC.compuware.com
   pathMappings:
   - path: \ACTI
     types:
