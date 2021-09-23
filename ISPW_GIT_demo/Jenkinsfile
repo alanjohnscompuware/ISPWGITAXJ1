@@ -21,7 +21,7 @@ node {
      master =>STG,per-branch
      ''', 
      connectionId: "${HCI_Token}",
-     credentialsId:"${MF_TSOId_Token}",
+     credentialsId: "${MF_TSOId_Token}",
      gitCredentialsId: 'JENKINS_GITHUB_USER', 
      gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git',
      ispwConfigPath: 'ISPW_GIT_demo/ispwconfig.yml', 
@@ -31,8 +31,7 @@ node {
   stage('Build ISPW assignment')
   // this version automatically pick up the assignment
   {
-    ispwOperation     
-    connectionId: "${HCI_Token}", 
+    ispwOperation    connectionId: "${HCI_Token}", 
     credentialsId: "${MF_TSOId_Token}",
     ispwAction: 'BuildAssignment', 
     ispwRequestBoby:   '''buildautomatically=true'''
