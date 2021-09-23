@@ -30,11 +30,11 @@ String HCI_Token              = "LOCAL_CWCC_HCI"
     master =>STG,per-branch
     ''', 
    connectionId: 'CWCC_HCI',
-    credentialsId: 'CWCC_TSO_LOGIN',
-     gitCredentialsId: 'JENKINS_GITHUB_USER', 
-     gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git',
-      ispwConfigPath: 'ISPW_GIT_demo/ispwconfig.yml', 
-      stream: 'FTSDEMO
+   credentialsId: 'CWCC_TSO_LOGIN',
+   gitCredentialsId: 'JENKINS_GITHUB_USER', 
+   gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git',
+   ispwConfigPath: 'ISPW_GIT_demo/ispwconfig.yml', 
+      stream: 'FTSDEMO'
   }
   
   
