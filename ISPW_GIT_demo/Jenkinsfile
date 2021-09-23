@@ -15,15 +15,38 @@ String HCI_Token              = "LOCAL_CWCC_HCI"
 
   stage('Git to ISPW Synchronization')
   { 
-    gitToIspwIntegration app: 'AXJ1', 
-    branchMapping: '''*feature* =>QA1,per-branch
+  //  gitToIspwIntegration app: 'AXJ1', 
+  //  branchMapping: '''*feature* =>QA1,per-branch
+  //  master =>STG,per-branch
+  //  ''', 
+  //  connectionId: "${HCI_Token}", 
+  //  credentialsId: "${MF_TSOId_Token}",
+  //  gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git', 
+  //  stream: 'FTSDEMO'
+ // }
+  
+  gitToIspwIntegration app: 'AXJ1',
+  branchMapping: '''*feature* =>QA1,per-branch
     master =>STG,per-branch
     ''', 
-    connectionId: "${HCI_Token}", 
-    credentialsId: "${MF_TSOId_Token}",
-    gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git', 
-    stream: 'FTSDEMO'
+   connectionId: 'CWCC_HCI',
+    credentialsId: 'CWCC_TSO_LOGIN',
+     gitCredentialsId: 'JENKINS_GITHUB_USER', 
+     gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git',
+      ispwConfigPath: 'ISPW_GIT_demo/ispwconfig.yml', 
+      stream: 'FTSDEMO
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   stage('Build ISPW assignment')
   // this version automatically pick up the assignment
