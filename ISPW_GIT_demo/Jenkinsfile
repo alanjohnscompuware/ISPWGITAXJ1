@@ -6,7 +6,7 @@ node {
   // Perform a build
   
     String MF_TSOId_Token         = "CWCC_TSO_LOGIN"    
-    String HCI_Token              = "d2e2c4fc-c1af-4097-a1f2-57cb525cd7e" 
+    String HCI_Token              = "d2e2c4fc-c1af-4097-a1f2-57cb525cd7e0" 
      
   stage ('Checkout') 
   {
