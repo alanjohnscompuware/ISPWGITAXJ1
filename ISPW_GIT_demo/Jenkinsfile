@@ -5,15 +5,8 @@ node {
   // Perform the Git to ISPW synchronization
   // Perform a build
   
-  // on CWCC TSO login is 'HUK0320_CWCC_TSO' credentials_ID value
-  // on CWCC jenkins logon is '2e557158-9714-4112-bd1c-75d4ff6a14e9' 
-  //   connectionid value
-  
-  // on local TSO login is 'CWCC_TSO_LOGIN' credentials id value
-  //on local Jenkins logon is 'LOCAL_CWCC_HCI' connection id value
-  
-    String MF_TSOId_Token         = "HUK0320_CWCC_TSO"    
-    String HCI_Token              = "2e557158-9714-4112-bd1c-75d4ff6a14e9" 
+    String MF_TSOId_Token         = "CWCC_TSO_LOGIN"    
+    String HCI_Token              = "d2e2c4fc-c1af-4097-a1f2-57cb525cd7e" 
      
   stage ('Checkout') 
   {
@@ -28,7 +21,7 @@ node {
      master =>STG,per-branch
      ''', 
      connectionId: "${HCI_Token}",
-     credentialsId: "${MF_TSOId_Token}",
+     credentialsId:"${MF_TSOId_Token}",
      gitCredentialsId: 'JENKINS_GITHUB_USER', 
      gitRepoUrl: 'https://github.com/alanjohnscompuware/ISPWGITAXJ1.git',
      ispwConfigPath: 'ISPW_GIT_demo/ispwconfig.yml', 
